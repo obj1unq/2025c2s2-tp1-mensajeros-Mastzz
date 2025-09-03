@@ -1,1 +1,22 @@
 import mensajero.*
+
+describe "Caso 1: Paquete de George no pago, llevado por Neo a la matrix"{
+    test ""
+}
+
+describe "Caso 2: Paquete de George pago, llevado por Jean a la matrix" {
+  test "" {
+    
+  }
+}
+describe "Caso 3: Paquete de George pago llevado por Sara (con peso 70kg)a Brooklyn si no utiliza camión con un acoplado" {
+  test "" {
+    
+  }
+}
+
+// describe "Caso 4: Paquete de George pago llevado por Sara (con peso 70kg)" {
+//   test "" {
+    
+//   }
+// }
