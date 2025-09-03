@@ -4,10 +4,14 @@
 
 // Destinos
 object puenteBrooklyn{
-    
+    method dejaPasar(mensajero){
+        return mensajero.peso() <= 1000
+    }
 }
 object laMatrix {
-  
+    method dejaPasar(mensajero){
+        return mensajero.puedeHacerLlamada()
+    }
 }
 
 // Mensajeros
