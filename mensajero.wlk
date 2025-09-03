@@ -16,11 +16,32 @@ object laMatrix {
 
 // Mensajeros
 object jeanGray {
-  
+    const property peso=65
+    method puedeHacerLlamada(){return true}
 }
 object neo {
-  
+    const property peso=0
+    var tieneCredito=true
+    method puedeHacerLlamada(){return tieneCredito} 
 }
 object saraConnor{
+    var property peso=60
+    var property vehiculo=moto
+    method peso(){
+        return peso + vehiculo.peso()
+    } 
+}
+
+// Medio de transporte (para Sara)
+object moto {
+    const peso = 100
+    method peso(){return peso}  
+}
+object camion {
+    const property pesoBase=500
+    var property cantidadDeAcoplados=1
+    method peso(){
+        return self.pesoBase() + (self.cantidadDeAcoplados() * 500)
+    }
     
 }
