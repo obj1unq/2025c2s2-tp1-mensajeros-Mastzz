@@ -1,7 +1,12 @@
 import mensajero.*
 
-describe "Caso 1: Paquete de George no pago, llevado por Neo a la matrix"{
-    test ""
+// No considere armar describes, por que expresan un conjunto de test mas amplios (creo jaja)
+test "Caso 1: Paquete de George no pago, no es llevado por Neo a la matrix"{
+    // Arrange
+    const paqueteDeGeorge=paquete
+    paqueteDeGeorge.estaPago(false)
+    // Assert
+    assert.notThat(paqueteDeGeorge.estaPago())
 }
 
 // describe "Caso 2: Paquete de George pago, llevado por Jean a la matrix" {
