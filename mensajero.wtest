@@ -1,26 +1,25 @@
 import mensajero.*
-
-// No considere armar describes, por que expresan un conjunto de test mas amplios (creo jaja)
-test "Caso 1: Paquete de George no pago, no es llevado por Neo a la matrix"{
+describe "Tests de ejercicio: Mensajero"{
+  const paqueteDeGeorge=paquete
+  test "Caso 1: Paquete de George no pago, no es llevado por Neo a la matrix"{
     // Arrange
-    const paqueteDeGeorge=paquete
     paqueteDeGeorge.estaPago(false)
     // Da igual settear a neo, el paquete no está pago...
     // Assert
     assert.notThat(neo.puedeEntregar(paqueteDeGeorge, laMatrix))
 }
-
 test "Caso 2: Paquete de George pago, es llevado por Jean a la matrix" {
   // Arrange
-  const paqueteDeGeorge=paquete
   paqueteDeGeorge.estaPago(true)
   // Assert
   assert.that(jeanGray.puedeEntregar(paqueteDeGeorge, laMatrix))
 }
-// describe "Caso 3: Paquete de George pago llevado por Sara (con peso 70kg)a Brooklyn si no utiliza camión con un acoplado" {
-//   test "" {
-    
-//   }
+
+
+}
+
+// test "Caso 3: Paquete de George pago, no es llevado por Sara (que pesa 70kg)a Brooklyn si es que utiliza camión con un acoplado" {
+//   // Arrange
 // }
 
 // describe "Caso 4: Paquete de George pago llevado por Sara (con peso 70kg)" {
