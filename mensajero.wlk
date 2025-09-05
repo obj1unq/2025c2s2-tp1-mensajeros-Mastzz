@@ -38,10 +38,14 @@ object moto {
     method peso(){return peso}  
 }
 object camion {
-    const property pesoBase=500
+    const pesoBase=500
     var property cantidadDeAcoplados=1
+    method pesoBase(){return pesoBase}
     method peso(){
-        return self.pesoBase() + (self.cantidadDeAcoplados() * 500)
+        return self.pesoBase() + self.pesoPorAcoplados()
+    }
+    method pesoPorAcoplados(){
+        return self.cantidadDeAcoplados() * 500
     }
     
 }
