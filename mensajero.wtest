@@ -4,7 +4,6 @@ describe "Tests de ejercicio: Mensajero"{
   test "Caso 1: Paquete de George no pago, no es llevado por Neo a la matrix"{
     // Arrange
     paqueteDeGeorge.estaPago(false)
-    // Da igual settear a neo, el paquete no está pago...
     // Assert
     assert.notThat(neo.puedeEntregar(paqueteDeGeorge, laMatrix))
 }
@@ -14,16 +13,19 @@ test "Caso 2: Paquete de George pago, es llevado por Jean a la matrix" {
   // Assert
   assert.that(jeanGray.puedeEntregar(paqueteDeGeorge, laMatrix))
 }
-
-
+test "Caso 3: Paquete de George pago, no es llevado por Sara (que pesa 70kg)a Brooklyn si es que utiliza camión con un acoplado" {
+  // Arrange
+  paqueteDeGeorge.estaPago(true)
+  saraConnor.peso(70)
+  camion.cantidadDeAcoplados(1)
+  saraConnor.vehiculo(camion)
+  // Assert
+  assert.notThat(saraConnor.puedeEntregar(paqueteDeGeorge, puenteBrooklyn)
+)
+}
+// test "Caso 4: Paquete de George pago llevado por Sara (con peso 70kg)" {
+  
+// }
 }
 
-// test "Caso 3: Paquete de George pago, no es llevado por Sara (que pesa 70kg)a Brooklyn si es que utiliza camión con un acoplado" {
-//   // Arrange
-// }
 
-// describe "Caso 4: Paquete de George pago llevado por Sara (con peso 70kg)" {
-//   test "" {
-    
-//   }
-// }
