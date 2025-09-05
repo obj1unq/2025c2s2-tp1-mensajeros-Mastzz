@@ -10,15 +10,13 @@ test "Caso 1: Paquete de George no pago, no es llevado por Neo a la matrix"{
     assert.notThat(neo.puedeEntregar(paqueteDeGeorge, laMatrix))
 }
 
-// test "Caso 2: Paquete de George pago, es llevado por Jean a la matrix" {
-//   // Arrange
-//   const paqueteDeGeorge=paquete
-//   paqueteDeGeorge.estaPago(true)
-//   const mensajeroJean=jeanGray
-//   // Assert
-//   assert.that(paqueteDeGeorge.estaPago())
-//   assert.that()
-// }
+test "Caso 2: Paquete de George pago, es llevado por Jean a la matrix" {
+  // Arrange
+  const paqueteDeGeorge=paquete
+  paqueteDeGeorge.estaPago(true)
+  // Assert
+  assert.that(jeanGray.puedeEntregar(paqueteDeGeorge, laMatrix))
+}
 // describe "Caso 3: Paquete de George pago llevado por Sara (con peso 70kg)a Brooklyn si no utiliza camión con un acoplado" {
 //   test "" {
     
