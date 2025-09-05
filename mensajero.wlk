@@ -8,12 +8,12 @@ object paquete {
 }
 // Destinos
 object puenteBrooklyn{
-    method dejaPasar(mensajero){
+    method puedePasar(mensajero){
         return mensajero.peso() <= 1000
     }
 }
 object laMatrix {
-    method dejaPasar(mensajero){
+    method puedePasar(mensajero){
         return mensajero.puedeHacerLlamada()
     }
 }
@@ -22,11 +22,17 @@ object laMatrix {
 object jeanGray {
     const property peso=65
     method puedeHacerLlamada(){return true}
+    method puedeEntregar(paquete, destino){
+        return paquete.estaPago() && destino.puedePasar(self)
+    }
 }
 object neo {
     const property peso=0
     var property tieneCredito=true
-    method puedeHacerLlamada(){return tieneCredito} 
+    method puedeHacerLlamada(){return tieneCredito}
+    method puedeEntregar(paquete, destino){
+        return paquete.estaPago() && destino.puedePasar(self)
+    }
 }
 object saraConnor{
     var property peso=60
@@ -34,6 +40,9 @@ object saraConnor{
     method peso(){
         return peso + vehiculo.peso()
     } 
+    method puedeEntregar(paquete, destino){
+        return paquete.estaPago() && destino.puedePasar(self)
+    }
 }
 
 // Medio de transporte (para Sara)
@@ -51,5 +60,4 @@ object camion {
     method pesoPorAcoplados(){
         return self.cantidadDeAcoplados() * 500
     }
-    
 }
