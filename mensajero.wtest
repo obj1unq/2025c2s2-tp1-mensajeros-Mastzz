@@ -23,9 +23,14 @@ test "Caso 3: Paquete de George pago, no es llevado por Sara (que pesa 70kg)a Br
   assert.notThat(saraConnor.puedeEntregar(paqueteDeGeorge, puenteBrooklyn)
 )
 }
-// test "Caso 4: Paquete de George pago llevado por Sara (con peso 70kg)" {
-  
-// }
+test "Caso 4: Paquete de George pago, es llevado por Sara (con peso 70kg)" {
+  // Arrange
+  paqueteDeGeorge.estaPago(true)
+  saraConnor.peso(70)
+  saraConnor.vehiculo(moto)
+  // Assert
+  assert.that(saraConnor.puedeEntregar(paqueteDeGeorge, puenteBrooklyn))
+}
 }
 
 
