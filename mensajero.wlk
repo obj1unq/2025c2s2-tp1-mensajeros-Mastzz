@@ -2,6 +2,10 @@
 // ¿ Quien lo entrega?
 // ¿ En donde se entrega?
 
+// Paquete
+object paquete {
+    var property estaPago = true
+}
 // Destinos
 object puenteBrooklyn{
     method dejaPasar(mensajero){
@@ -21,7 +25,7 @@ object jeanGray {
 }
 object neo {
     const property peso=0
-    var tieneCredito=true
+    var property tieneCredito=true
     method puedeHacerLlamada(){return tieneCredito} 
 }
 object saraConnor{
